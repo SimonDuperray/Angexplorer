@@ -1,25 +1,44 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import Svg from 'react-native-svg';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import logo from './assets/logoreduitnoir.svg';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ConnexionScreen from "./routes/ConnexionScreen";
+import GameScreen from "./routes/Game";
+import ListScreen from "./routes/List";
+import TextScreen from "./routes/Text";
+import VideoScreen from "./routes/Video";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      {/* <Text style={{color: 'white'}}>Open up App.js to start working on your app !</Text> */}
-      <Image source={logo} style={{width: 200, height: 300, aspectRatio: 2/3}} />
-      {/* <Svg height="100%" width="100%" viewBox="0 0 100 100">
-        <Image source={logo} style={{height: undefined, width: '100%', aspectRatio: 1}} />
-      </Svg> */}
-    </View>
-  );
+const Stack = createStackNavigator();
+
+class App extends React.Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Connexion"
+            component={ConnexionScreen}
+          />
+          <Stack.Screen
+            name="List"
+            component={ListScreen}
+          />
+          <Stack.Screen
+            name="Game"
+            component={GameScreen}
+          />
+          <Stack.Screen
+            name="Text"
+            component={TextScreen}
+          />
+          <Stack.Screen
+            name="Video"
+            component={VideoScreen}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FDB934',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
