@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import {Video} from 'react-native-video';
-import video_ from "../assets/PWS0RFYSV3YZU4XO.mp4";
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 class VideoScreen extends React.Component {
    render() {
@@ -12,20 +10,24 @@ class VideoScreen extends React.Component {
          console.log("video error");
       }
       return (
-         <View>
-            <Text>The Video component is still not working...</Text>
-            {/* <Button 
-               title="Back to Home"
-               onPress={() => (
-                  this.props.navigation.navigate('Home')
-               )}
-            /> */}
+         <View style={styles.container}>
+            <Text style={styles.warning}>The Video component is still not working...</Text>
          </View>
       );
    }
 }
 
 const styles = StyleSheet.create({
+   container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: "center",
+      textAlign: 'center'
+   },
+   warning: {
+      fontWeight: 'bold',
+      fontSize: 20
+   },
    backgroundVideo: {
       position: 'absolute',
       top: 0,

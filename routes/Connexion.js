@@ -9,7 +9,7 @@ class ConnexionScreen extends React.Component {
             <Button 
                title="Connect"
                onPress={() => (
-                  this.props.navigation.navigate('List')
+                  this.props.navigation.navigate('List Component')
                )}
             />
          </View>
