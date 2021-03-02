@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import * as Animatable from "react-native-animatable";
 import ralliement from "../assets/ralliement.jpg";
 
 class TextScreen extends React.Component {
@@ -9,9 +10,17 @@ class TextScreen extends React.Component {
             <View style={styles.header}>
                <Text style={styles.brandHeader}>Angexplorer</Text>
                <Text style={styles.textHeader}>Place du Ralliement</Text>
-               <Text style={styles.accountRedirectionText}>My Account</Text>
+               <TouchableOpacity
+                  onPress={() => {
+                     this.props.navigation.navigate("SignIn");
+                  }}
+               >
+                  <Text style={styles.accountRedirectionText}>My Account</Text>
+               </TouchableOpacity>
             </View>
-            <View style={styles.footer}>
+            <Animatable.View 
+                  animation="fadeInUpBig"
+               style={styles.footer}>
                <Image source={ralliement} style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }} />
                <Text style={{ marginBottom: 20 }}>
                   Vous êtes déjà tous passés devant le 8 place du Ralliement, mais saviez-vous que ce fut à cet endroit que les Angevins découvrirent le cinéma?
@@ -21,7 +30,7 @@ class TextScreen extends React.Component {
                   C’est dans cette dynamique que Gasnault organise, en 1896, soit seulement quelques mois après la première démonstration des frères Lumières, la première séance de cinéma donnée à Angers.
                   Ce lieu d’effervescence populaire a été converti en bureaux après les années 1950, mais il restera une référence dans l’histoire du divertissement à Angers.
                </Text>
-            </View>
+            </Animatable.View>
          </View>
       );
    }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import * as Animatable from "react-native-animatable";
 
 class ListScreen extends React.Component {
    render() {
@@ -8,14 +9,17 @@ class ListScreen extends React.Component {
             <View style={styles.header}>
                <Text style={styles.brandHeader}>Angexplorer</Text>
             </View>
-            <View style={styles.footer}>
+            <Animatable.View 
+                  animation="fadeInUpBig"
+               style={styles.footer}
+            >
                <TouchableOpacity
                   style={styles.button}
                   onPress={() => {
                      this.props.navigation.navigate('Text')
                   }}
                >
-                  <Text>Text Component</Text>
+                  <Text style={styles.textColorList}>Text Component</Text>
                </TouchableOpacity>
                <TouchableOpacity
                   style={styles.button}
@@ -23,7 +27,7 @@ class ListScreen extends React.Component {
                      this.props.navigation.navigate('Video')
                   }}
                >
-                  <Text>Video Component</Text>
+                  <Text style={styles.textColorList}>Video Component</Text>
                </TouchableOpacity>
                <TouchableOpacity
                   style={styles.button}
@@ -31,9 +35,9 @@ class ListScreen extends React.Component {
                      this.props.navigation.navigate('Game')
                   }}
                >
-                  <Text>Game Component</Text>
+                  <Text style={styles.textColorList}>Game Component</Text>
                </TouchableOpacity>
-            </View>
+            </Animatable.View>
          </View>
       );
    }
@@ -46,10 +50,15 @@ const styles = StyleSheet.create({
    },
    button: {
       alignItems: "center",
-      backgroundColor: "#DDDDDD",
       padding: 10,
       marginVertical: 10,
-      borderRadius: 10
+      borderRadius: 10,
+      borderColor: "#FDB934",
+      borderWidth: 1,
+   },
+   textColorList: {
+      color: '#FDB934',
+      fontWeight: 'bold',
    },
    header: {
       flex: 0.7,

@@ -11,25 +11,25 @@ class Splash extends React.Component {
                <Animatable.Image 
                      animation="bounceIn"
                      duraton="1500"
-                  source={require("../assets/logoreduitnoir.svg")}
+                  source={require("../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
                />
             </View>
             <Animatable.View 
-                  animation="fadeInUpBig"
+                  animation="fadeInUpBig" 
                style={styles.footer}
             >
                <Text style={styles.title}>Un autre regard sur votre trajet</Text>
-               <Text style={styles.text}>Se connecter</Text>
+               <Text style={styles.text}>Place du Ralliement</Text>
                <View style={styles.button}>
                   <TouchableOpacity 
                      onPress={() => {
-                        this.props.navigation.navigate("SignUp")
+                        this.props.navigation.navigate("List")
                      }}
                      style={styles.signIn}
                   >
-                     <Text style={styles.textSign}>Allez-y</Text>
+                     <Text style={styles.textSign}>Access data</Text>
                      <MaterialIcons
                         name="navigate-next"
                         color="#fff"
@@ -44,7 +44,7 @@ class Splash extends React.Component {
 }
 
 const { height } = Dimensions.get('screen');
-const height_logo = height * 0.28;
+const height_logo = height * 0.37;
 
 const styles = StyleSheet.create({
    container: {

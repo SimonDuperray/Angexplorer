@@ -12,7 +12,45 @@ import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 
+// const SignInScreen = () => {
 class SignInScreen extends React.Component {
+
+   // const [data, setData] = React.useState({
+   //    email: '',
+   //    password: '',
+   //    check_textInputEntry: false,
+   //    secureTextEntry: true
+   // });
+
+   // const textInputChange = (val) => {
+   //    if(val.length != 0){
+   //       setData({
+   //          ...data,
+   //          email: val,
+   //          check_textInputEntry: true
+   //       });
+   //    } else {
+   //       setData({
+   //          ...data,
+   //          email: val,
+   //          check_textInputEntry: false
+   //       });
+   //    }
+   // }
+
+   // const handlePasswordChange = (val) => {
+   //    setData({
+   //       ...data,
+   //       password: val
+   //    });
+   // }
+
+   // const updateSecureTextEntry = () => {
+   //    setData({
+   //       ...data,
+   //       secureTextEntry: !data.secureTextEntry
+   //    });
+   // }
    render() {
       return (
          <View style={styles.container}>
@@ -38,12 +76,24 @@ class SignInScreen extends React.Component {
                      placeholder="Your email"
                      style={styles.textInput}
                      autoCapitalize="none"
+                     // onChangeText={(val) => textInputChange(val)}
                   />
                   <Feather
                      name="check-circle"
                      color="green"
                      size={20}
                   />
+                  {/* { data.check_textInputEntry ? 
+                     <Animatable.View
+                        animation="bounceIn"
+                     >
+                        <Feather
+                           name="check-circle"
+                           color="green"
+                           size={20}
+                        />
+                     </Animatable.View>
+                  : null } */}
                </View>
                <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
                <View style={styles.action}>
@@ -54,14 +104,33 @@ class SignInScreen extends React.Component {
                   />
                   <TextInput
                      placeholder="Your password"
+                     // secureTextEntry={data.secureTextEntry ? true : false}
                      style={styles.textInput}
                      autoCapitalize="none"
+                     // onChangeText={(val) => handlePasswordChange(val)}
                   />
                   <Feather
                      name="eye-off"
                      color="grey"
                      size={20}
                   />
+                  {/* <TouchableOpacity
+                     onPress={updateSecureTextEntry} 
+                  >
+                     { data.secureTextEntry ? 
+                        <Feather
+                           name="eye-off"
+                           color="grey"
+                           size={20}
+                        />
+                     :
+                        <Feather
+                           name="eye"
+                           color="grey"
+                           size={20}
+                        />
+                     }
+                  </TouchableOpacity> */}
                </View>
                <View style={styles.button}>
                   <TouchableOpacity

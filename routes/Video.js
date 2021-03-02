@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import * as Animatable from "react-native-animatable";
 
 class VideoScreen extends React.Component {
    render() {
@@ -9,9 +10,29 @@ class VideoScreen extends React.Component {
       const videoError = () => {
          console.log("video error");
       }
+      const {height} = Dimensions.get("screen");
+      const height_logo = height*0.28;
       return (
          <View style={styles.container}>
-            <Text style={styles.warning}>The Video component is still not working...</Text>
+            <View style={styles.header}>
+               <Animatable.Image
+                     animation="bounceIn"
+                     duraton="1500"
+                  source={require("../assets/logoreduitnoir.svg")}
+                  resizeMode="stretch"
+                  style={{
+                     width: height_logo,
+                     height: height_logo
+                  }}
+               />
+            </View>
+            <Animatable.View 
+                  animation="fadeInUpBig"
+               style={styles.footer}>
+               <Text style={styles.warning}>
+                  The Video component is still not working...
+               </Text>
+            </Animatable.View>
          </View>
       );
    }
@@ -20,13 +41,25 @@ class VideoScreen extends React.Component {
 const styles = StyleSheet.create({
    container: {
       flex: 1,
+      backgroundColor: "#FDB934"
+   },
+   header: {
+      flex: 2,
       justifyContent: 'center',
-      alignItems: "center",
-      textAlign: 'center'
+      alignItems: 'center'
+   },
+   footer: {
+      flex: 1,
+      backgroundColor: "#fff",
+      borderTopLeftRadius: 30,
+      borderTopRightRadius: 30,
+      paddingVertical: 50,
+      paddingHorizontal: 30
    },
    warning: {
       fontWeight: 'bold',
-      fontSize: 20
+      fontSize: 20,
+      color: "#05375a",
    },
    backgroundVideo: {
       position: 'absolute',
