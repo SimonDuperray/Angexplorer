@@ -24,7 +24,9 @@ class Splash extends React.Component {
                <Text style={styles.text}>Se connecter</Text>
                <View style={styles.button}>
                   <TouchableOpacity 
-                     onPress={()=>alert('Click')}
+                     onPress={() => {
+                        this.props.navigation.navigate("SignUp")
+                     }}
                      style={styles.signIn}
                   >
                      <Text style={styles.textSign}>Allez-y</Text>
