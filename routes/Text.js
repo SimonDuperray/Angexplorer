@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { 
+   View, 
+   Text, 
+   StyleSheet, 
+   TouchableOpacity,
+   Image,
+   ScrollView
+} from 'react-native';
 import * as Animatable from "react-native-animatable";
 import ralliement from "../assets/ralliement.jpg";
 
@@ -15,21 +22,24 @@ class TextScreen extends React.Component {
                      this.props.navigation.navigate("SignIn");
                   }}
                >
-                  <Text style={styles.accountRedirectionText}>My Account</Text>
+                  <Text style={styles.accountRedirectionText}>My Account</Text> 
                </TouchableOpacity>
             </View>
             <Animatable.View 
                   animation="fadeInUpBig"
-               style={styles.footer}>
-               <Image source={ralliement} style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }} />
-               <Text style={{ marginBottom: 20 }}>
-                  Vous êtes déjà tous passés devant le 8 place du Ralliement, mais saviez-vous que ce fut à cet endroit que les Angevins découvrirent le cinéma?
-               </Text>
-               <Text>
-                  En 1870, le cafetier Armand Gasnault passe commande auprès d’Alexandre Aïvas, architecte de renom, pour qu’il lui dessine les plans de ce qui deviendra, après deux ans de travaux, le Café Gasnault. Il devient rapidement une référence en termes d’animation, accueillant de nombreux artistes, et parfois même des orchestres entiers.
-                  C’est dans cette dynamique que Gasnault organise, en 1896, soit seulement quelques mois après la première démonstration des frères Lumières, la première séance de cinéma donnée à Angers.
-                  Ce lieu d’effervescence populaire a été converti en bureaux après les années 1950, mais il restera une référence dans l’histoire du divertissement à Angers.
-               </Text>
+               style={styles.footer}
+            >
+               <ScrollView>     
+                  <Image source={ralliement} style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }} />
+                  <Text style={{ marginBottom: 20 }}>
+                     Vous êtes déjà tous passés devant le 8 place du Ralliement, mais saviez-vous que ce fut à cet endroit que les Angevins découvrirent le cinéma?
+                  </Text>
+                  <Text>
+                     En 1870, le cafetier Armand Gasnault passe commande auprès d’Alexandre Aïvas, architecte de renom, pour qu’il lui dessine les plans de ce qui deviendra, après deux ans de travaux, le Café Gasnault. Il devient rapidement une référence en termes d’animation, accueillant de nombreux artistes, et parfois même des orchestres entiers.
+                     C’est dans cette dynamique que Gasnault organise, en 1896, soit seulement quelques mois après la première démonstration des frères Lumières, la première séance de cinéma donnée à Angers.
+                     Ce lieu d’effervescence populaire a été converti en bureaux après les années 1950, mais il restera une référence dans l’histoire du divertissement à Angers.
+                  </Text>
+               </ScrollView>
             </Animatable.View>
          </View>
       );
@@ -42,7 +52,7 @@ const styles = StyleSheet.create({
      backgroundColor: '#FDB934',
    },
    header: {
-     flex: 0.7,
+     flex: 1,
      justifyContent: 'flex-end',
      paddingHorizontal: 20,
      paddingBottom: 50
@@ -72,7 +82,7 @@ const styles = StyleSheet.create({
      textDecorationColor: '#fff',
      textDecorationLine: 'underline',
      fontWeight: 'bold',
-   }
+   },
 });
  
 

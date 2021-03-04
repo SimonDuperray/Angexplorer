@@ -1,13 +1,14 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Dimensions } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import * as Animatable from "react-native-animatable";
+import { pattern } from "../styles";
 
-class Splash extends React.Component {
+export default class Splash extends React.Component {
    render() {
       return (
-         <View style={styles.container}>
-            <View style={styles.header}>
+         <View style={pattern.container}>
+            <View style={pattern.header}>
                <Animatable.Image 
                      animation="bounceIn"
                      duraton="1500"
@@ -18,7 +19,7 @@ class Splash extends React.Component {
             </View>
             <Animatable.View 
                   animation="fadeInUpBig" 
-               style={styles.footer}
+               style={pattern.footer}
             >
                <Text style={styles.title}>Un autre regard sur votre trajet</Text>
                <Text style={styles.text}>Place du Ralliement</Text>
@@ -71,11 +72,14 @@ const styles = StyleSheet.create({
    title: {
       color: "#05375a",
       fontSize: 30,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      paddingBottom: 15,
+      borderBottomWidth: 1,
+      borderBottomColor: "#05375a"
    },
    text: {
       color: 'grey',
-      marginTop: 5
+      marginTop: 15
    },
    button: {
       alignItems: "flex-end",
@@ -96,5 +100,3 @@ const styles = StyleSheet.create({
       fontWeight: 'bold'
    }
 });
-
-export default Splash;

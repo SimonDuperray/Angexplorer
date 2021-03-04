@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { 
+   View, 
+   Text, 
+   StyleSheet, 
+   TouchableOpacity,
+   Dimensions
+} from 'react-native';
 import * as Animatable from "react-native-animatable";
 
 class ListScreen extends React.Component {
@@ -7,7 +13,13 @@ class ListScreen extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               <Text style={styles.brandHeader}>Angexplorer</Text>
+               <Animatable.Image
+                     animation="bounceIn"
+                     duraton="1500"
+                  source={require("../assets/logocompletnoir.svg")}
+                  style={styles.logo}
+                  resizeMode="stretch"
+               />
             </View>
             <Animatable.View 
                   animation="fadeInUpBig"
@@ -43,6 +55,9 @@ class ListScreen extends React.Component {
    }
 }
 
+const { height } = Dimensions.get('screen');
+const height_logo = height *0.37;
+
 const styles = StyleSheet.create({
    container: {
       flex: 1,
@@ -61,13 +76,14 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
    },
    header: {
-      flex: 0.7,
-      justifyContent: 'flex-end',
-      paddingHorizontal: 20,
-      paddingBottom: 50
+      flex: 1,
+      borderTopLeftRadius: 30,
+      borderTopRightRadius: 30,
+      paddingVertical: 50,
+      paddingHorizontal: 30
    },
    footer: {
-      flex: 3,
+      flex: 1,
       backgroundColor: '#fff',
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
@@ -78,6 +94,10 @@ const styles = StyleSheet.create({
       color: '#fff',
       fontWeight: 'bold',
       fontSize: 30
+   },
+   logo: {
+      width: height_logo,
+      height: height_logo
    },
 });
 

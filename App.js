@@ -10,6 +10,11 @@ import SplashScreen from "./routes/Splash";
 import SignInScreen from "./routes/SignIn";
 import SignUpScreen from "./routes/SignUp";
 import AccountScreen from "./routes/Account";
+import FirstSuccess from "./user-data/success/FirstSuccess";
+import SecondSuccess from "./user-data/success/SecondSuccess";
+import ThirdSuccess from "./user-data/success/ThirdSuccess";
+import FirstReward from "./user-data/reward/FirstReward";
+import SecondReward from "./user-data/reward/SecondReward";
 
 const Stack = createStackNavigator();
 
@@ -17,10 +22,18 @@ class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}
+        >
           <Stack.Screen
             name="Splash"
             component={SplashScreen}
+          />
+          <Stack.Screen
+            name='Account'
+            component={AccountScreen}
           />
           <Stack.Screen
             name="Text"
@@ -47,8 +60,24 @@ class App extends React.Component {
             component={VideoScreen}
           />
           <Stack.Screen
-            name='Account'
-            component={AccountScreen}
+            name="FirstSuccess"
+            component={FirstSuccess}
+          />
+          <Stack.Screen
+            name="SecondSuccess"
+            component={SecondSuccess}
+          />
+          <Stack.Screen
+            name="ThirdSuccess"
+            component={ThirdSuccess}
+          />
+          <Stack.Screen
+            name="FirstReward"
+            component={FirstReward}
+          />
+          <Stack.Screen
+            name="SecondReward"
+            component={SecondReward}
           />
         </Stack.Navigator>
       </NavigationContainer>

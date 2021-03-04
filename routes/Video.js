@@ -1,30 +1,31 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import * as Animatable from "react-native-animatable";
 
 class VideoScreen extends React.Component {
    render() {
-      const onBuffer = () => {
-         console.log("on buffer handle");
-      }
-      const videoError = () => {
-         console.log("video error");
-      }
-      const {height} = Dimensions.get("screen");
-      const height_logo = height*0.28;
       return (
          <View style={styles.container}>
             <View style={styles.header}>
                <Animatable.Image
                      animation="bounceIn"
                      duraton="1500"
-                  source={require("../assets/logoreduitnoir.svg")}
+                  source={require("../assets/logocompletnoir.svg")}
                   resizeMode="stretch"
                   style={{
                      width: height_logo,
                      height: height_logo
                   }}
                />
+               {/* <Text style={styles.brandHeader}>Angexplorer</Text>
+               <Text style={styles.textHeader}>Place du Ralliement</Text>
+               <TouchableOpacity
+                  onPress={() => {
+                     this.props.navigation.navigate("SignIn");
+                  }}
+               >
+                  <Text style={styles.accountRedirectionText}>My Account</Text> 
+               </TouchableOpacity> */}
             </View>
             <Animatable.View 
                   animation="fadeInUpBig"
@@ -37,6 +38,9 @@ class VideoScreen extends React.Component {
       );
    }
 }
+
+const { height } = Dimensions.get("screen");
+const height_logo = height * 0.37;
 
 const styles = StyleSheet.create({
    container: {
@@ -68,6 +72,24 @@ const styles = StyleSheet.create({
       bottom: 0,
       right: 0
    },
+   brandHeader: {
+      color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 30
+   },
+   textHeader: {
+      color: '#fff',
+      fontSize: 20,
+      fontStyle: 'italic'
+   },
+   accountRedirectionText: {
+      color: '#fff',
+      fontSize: 15,
+      textDecorationStyle: 'solid',
+      textDecorationColor: '#fff',
+      textDecorationLine: 'underline',
+      fontWeight: 'bold',
+   }
 });
 
 export default VideoScreen;

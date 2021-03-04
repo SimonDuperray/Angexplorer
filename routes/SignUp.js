@@ -35,7 +35,7 @@ class SignUpScreen extends React.Component {
                      size={20}
                   />
                   <TextInput
-                     placeholder="Your email"
+                     placeholder="Your mail"
                      style={styles.textInput}
                      autoCapitalize="none"
                   />
@@ -91,6 +91,9 @@ class SignUpScreen extends React.Component {
                <View style={styles.button}>
                   <TouchableOpacity
                      style={[styles.signIn, {backgroundColor:"#FDB934"}]}
+                     onPress={() => {
+                        this.props.navigation.navigate("Account");
+                     }}
                   >
                      <Text style={styles.textSign}>Sign Up</Text>
                   </TouchableOpacity>
@@ -117,8 +120,8 @@ export default SignUpScreen;
 
 const styles = StyleSheet.create({
    container: {
-   flex: 1, 
-   backgroundColor: '#FDB934'
+      flex: 1, 
+      backgroundColor: '#FDB934'
    },
    header: {
       flex: 1,
