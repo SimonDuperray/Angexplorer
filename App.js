@@ -28,6 +28,10 @@ class App extends React.Component {
           }}
         >
           <Stack.Screen
+            name="Game"
+            component={GameScreen}
+          />
+          <Stack.Screen
             name="Splash"
             component={SplashScreen}
           />
@@ -50,10 +54,6 @@ class App extends React.Component {
           <Stack.Screen
             name="List"
             component={ListScreen}
-          />
-          <Stack.Screen
-            name="Game"
-            component={GameScreen}
           />
           <Stack.Screen
             name="Video"

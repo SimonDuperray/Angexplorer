@@ -22,6 +22,14 @@ const styles = StyleSheet.create({
       borderRadius: 100,
       backgroundColor: '#FC7933',
       margin: 10,
-      padding: 5
+      padding: 5,
+      shadowColor: "#000",
+      shadowOffset: {
+         width: 0,
+         height: 4,
+      },
+      shadowOpacity: 0.32,
+      shadowRadius: 5.46,
+      elevation: 9,
    },
 });

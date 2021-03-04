@@ -12,13 +12,16 @@ import {
 import Success from "../components/Success";
 import Reward from "../components/Reward";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import * as Animatable from "react-native-animatable";
 
 class Account extends React.Component {
    render() {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               <Image 
+               <Animatable.Image 
+                     animation="bounceIn"
+                     duraton="1500"
                   source={require("../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
@@ -33,7 +36,15 @@ class Account extends React.Component {
                      backgroundColor: 'orange',
                      paddingVertical: 5,
                      paddingHorizontal: 10,
-                     borderRadius: 10
+                     borderRadius: 10,
+                     shadowColor: "#000",
+                     shadowOffset: {
+                        width: 0,
+                        height: 4,
+                     },
+                     shadowOpacity: 0.32,
+                     shadowRadius: 5.46,
+                     elevation: 9,
                   }}
                >
                   <Text
@@ -46,7 +57,10 @@ class Account extends React.Component {
                   </Text>
                </TouchableOpacity>
             </View>
-            <View style={styles.footer}>
+            <Animatable.View 
+                  animation="fadeInUpBig"
+               style={styles.footer}
+            >
                <ScrollView>
                   <View style={styles.myAccount}>
                      <View style={styles.partContainer}>
@@ -111,12 +125,12 @@ class Account extends React.Component {
                               this.props.navigation.navigate("SecondReward")
                            }}
                         >
-                           <Reward reward="Theatrical tickets offered"/>
+                           <Reward reward="Meal offered"/>
                         </TouchableOpacity>
                      </View>
                   </View>
                </ScrollView>
-            </View>
+            </Animatable.View>
          </View>
       );
    }

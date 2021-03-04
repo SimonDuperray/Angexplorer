@@ -24,7 +24,15 @@ export default class FirstSuccess extends React.Component {
                      backgroundColor: 'orange',
                      paddingVertical: 5,
                      paddingHorizontal: 10,
-                     borderRadius: 10
+                     borderRadius: 10,
+                     shadowColor: "#000",
+                     shadowOffset: {
+                        width: 0,
+                        height: 4,
+                     },
+                     shadowOpacity: 0.32,
+                     shadowRadius: 5.46,
+                     elevation: 9,
                   }}
                >
                   <Text
@@ -37,7 +45,10 @@ export default class FirstSuccess extends React.Component {
                   </Text>
                </TouchableOpacity>
             </View>
-            <View style={styles.footer}>
+            <Animatable.View 
+                  animation='fadeInUpBig'
+               style={styles.footer}
+            >
                <Text style={styles.successName}>Proche de la fin</Text>
                <Image
                   source={require("../../assets/prochefin.PNG")}
@@ -46,7 +57,7 @@ export default class FirstSuccess extends React.Component {
                <Text style={styles.successDescription}>
                   Il ne vous manque que 5 arrêts à découvrir. Trouvez-les pour gagner 10 points et une récompense de votre choix !
                </Text>
-            </View>
+            </Animatable.View>
          </View>
       );
    }

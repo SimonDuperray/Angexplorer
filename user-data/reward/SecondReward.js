@@ -24,7 +24,15 @@ export default class FirstSuccess extends React.Component {
                      backgroundColor: 'orange',
                      paddingVertical: 5,
                      paddingHorizontal: 10,
-                     borderRadius: 10
+                     borderRadius: 10,
+                     shadowColor: "#000",
+                     shadowOffset: {
+                        width: 0,
+                        height: 4,
+                     },
+                     shadowOpacity: 0.32,
+                     shadowRadius: 5.46,
+                     elevation: 9,
                   }}
                >
                   <Text
@@ -37,7 +45,10 @@ export default class FirstSuccess extends React.Component {
                   </Text>
                </TouchableOpacity>
             </View>
-            <View style={styles.footer}>
+            <Animatable.View 
+                  animation='fadeInUpBig'
+               style={styles.footer}
+            >
                <Text style={styles.successName}>Bistrot des Ducs</Text>
                <Image
                   source={require("../../assets/resto.jpg")}
@@ -47,7 +58,7 @@ export default class FirstSuccess extends React.Component {
                   1 plat traditionnel français offert pour un menu classique acheté !
                </Text>
                <Text style={styles.linking}>débloquez votre récompense dès maintenant</Text>
-            </View>
+            </Animatable.View>
          </View>
       );
    }

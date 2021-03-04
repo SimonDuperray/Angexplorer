@@ -5,7 +5,7 @@ import {
    StyleSheet, 
    TouchableOpacity,
    Image,
-   ScrollView
+   ScrollView,
 } from 'react-native';
 import * as Animatable from "react-native-animatable";
 import ralliement from "../assets/ralliement.jpg";
@@ -19,10 +19,36 @@ class TextScreen extends React.Component {
                <Text style={styles.textHeader}>Place du Ralliement</Text>
                <TouchableOpacity
                   onPress={() => {
-                     this.props.navigation.navigate("SignIn");
+                     this.props.navigation.navigate("SignIn")
+                  }}
+                  style={{
+                     borderWidth: 1,
+                     borderColor: "orange",
+                     backgroundColor: 'orange',
+                     paddingVertical: 5,
+                     paddingHorizontal: 10,
+                     borderRadius: 10,
+                     width: 130,
+                     textAlign: "center",
+                     marginTop: 15,
+                     shadowColor: "#000",
+                     shadowOffset: {
+                        width: 0,
+                        height: 4,
+                     },
+                     shadowOpacity: 0.32,
+                     shadowRadius: 5.46,
+                     elevation: 9,
                   }}
                >
-                  <Text style={styles.accountRedirectionText}>My Account</Text> 
+                  <Text
+                     style={{
+                        fontWeight: 'bold',
+                        color: "#fff"
+                     }}
+                  >
+                     My Account
+                  </Text>
                </TouchableOpacity>
             </View>
             <Animatable.View 

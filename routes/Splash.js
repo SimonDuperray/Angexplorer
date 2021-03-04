@@ -28,7 +28,16 @@ export default class Splash extends React.Component {
                      onPress={() => {
                         this.props.navigation.navigate("List")
                      }}
-                     style={styles.signIn}
+                     style={[styles.signIn, {
+                        shadowColor: "#000",
+                        shadowOffset: {
+                           width: 0,
+                           height: 4
+                        },
+                        shadowOpacity: 0.32,
+                        shadowRadius: 5.46,
+                        elevation: 9
+                     }]}
                   >
                      <Text style={styles.textSign}>Access data</Text>
                      <MaterialIcons
@@ -75,7 +84,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       paddingBottom: 15,
       borderBottomWidth: 1,
-      borderBottomColor: "#05375a"
+      borderBottomColor: "#05375a",
    },
    text: {
       color: 'grey',
