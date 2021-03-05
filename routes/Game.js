@@ -3,15 +3,73 @@ import {
    StyleSheet, 
    View, 
    Text, 
-   TextInput,
    TouchableOpacity,
-   ScrollView,
    Dimensions,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export default class Game extends React.Component {
    render() {
+      const heartsList = [];
+      for(let i=0; i<8; i++){
+         heartsList.push(
+            <FontAwesome
+               name="heart"
+               color="#05375a"
+               size={20}
+               style={styles.heart}
+               id={i}
+            />
+         );
+      }
+      const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+      const firstLine = [];
+      const secondLine = [];
+      const thirdLine = [];
+      for(let f=0; f<11; f++){
+         firstLine.push(
+            <TouchableOpacity
+               style={styles.letter}
+               id={alphabet[f]}
+               onPress={() => {
+                  checkLetter(this.id);
+               }}
+            >
+               {alphabet[f]}
+            </TouchableOpacity>
+         );
+      }
+      for(let s=11; s<20; s++){
+         secondLine.push(
+            <TouchableOpacity
+               style={styles.letter}
+               id={alphabet[s]}
+               onPress={() => {
+                  checkLetter(this.id);
+               }}
+            >
+               {alphabet[s]}
+            </TouchableOpacity>
+         );
+      }
+      for(let t=21; t<=alphabet.length; t++){
+         thirdLine.push(
+            <TouchableOpacity
+               style={styles.letter}
+               id={alphabet[t]}
+               onPress={() => {
+                  console.log(this);
+               }}
+            >
+               {alphabet[t]}
+            </TouchableOpacity>
+         );
+      }
+      const toFindLetters = ['R', 'A', 'L', 'I', 'E', 'M', 'N', 'T'];
+      const checkLetter = (letter) => {
+         alert(letter);
+      }
       return (
          <View style={styles.container}>
             <View style={styles.header}>
@@ -59,26 +117,21 @@ export default class Game extends React.Component {
             >
                <Text style={styles.title}>Jeu du pendu</Text>
                <View style={styles.toFindContainer}>
-                  <Text style={[styles.health], { fontSize: 17 }}>O O O O O O O O O</Text>
+                  <View style={styles.health}>
+                     { heartsList }
+                  </View>
                   <Text style={styles.toFind}>_ _ _ _ _ _ _ _ _ _</Text>
                </View>
-               <View style={[styles.keyboard, { flexDirection: 'row' }]}>
-                  <TextInput
-                     style={{
-                        width: 50,
-                        height: 50,
-                        borderWidth: 1,
-                        borderColor: '#000',
-                        padding: 5,
-                        borderRadius: 100,
-                        textAlign: 'center'
-                     }}
-                  />
-                  <TouchableOpacity
-
-                  >
-                     <Text>Ok</Text>
-                  </TouchableOpacity>
+               <View style={styles.keyboard}>
+                  <View style={styles.lineOfLetters}>
+                     { firstLine }
+                  </View>
+                  <View style={styles.lineOfLetters}>
+                     { secondLine }
+                  </View>
+                  <View style={styles.lineOfLetters}>
+                     { thirdLine }
+                  </View>
                </View>
             </Animatable.View>
          </View>
@@ -168,6 +221,25 @@ const styles = StyleSheet.create({
       textAlign: 'center'
    },
    health: {
-      textAlign: 'center'
+      flexDirection: 'row',
+      justifyContent: 'center',
+      marginVertical: 10
+   },
+   heart: {
+      marginHorizontal: 2,
+   },
+   letter: {
+      margin: 8,
+      fontSize: 20,
+   },
+   keyboard: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: 'center',
+      marginTop: 15
+   },
+   lineOfLetters: {
+      flexDirection: 'row',
+      marginVertical: 8,
    }
 })
