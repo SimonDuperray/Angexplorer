@@ -10,6 +10,14 @@ import * as Animatable from "react-native-animatable";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export default class Game extends React.Component {
+   constructor(props){
+      super(props);
+      this.getKey = this.getKey.bind(this);
+   }
+   getKey(event){
+      const selectedIndex = event.target.options.selectedIndex;
+      console.log(event.target.options[selectedIndex].getAttribute('data-key'));
+   }
    render() {
       const heartsList = [];
       for(let i=0; i<8; i++){
@@ -20,6 +28,7 @@ export default class Game extends React.Component {
                size={20}
                style={styles.heart}
                id={i}
+               key={i}
             />
          );
       }
@@ -35,6 +44,7 @@ export default class Game extends React.Component {
                onPress={() => {
                   checkLetter(this.id);
                }}
+               key={f}
             >
                {alphabet[f]}
             </TouchableOpacity>
@@ -48,6 +58,7 @@ export default class Game extends React.Component {
                onPress={() => {
                   checkLetter(this.id);
                }}
+               key={s}
             >
                {alphabet[s]}
             </TouchableOpacity>
@@ -59,8 +70,9 @@ export default class Game extends React.Component {
                style={styles.letter}
                id={alphabet[t]}
                onPress={() => {
-                  console.log(this);
+                  console.log();
                }}
+               key={t}
             >
                {alphabet[t]}
             </TouchableOpacity>
@@ -107,7 +119,7 @@ export default class Game extends React.Component {
                         color: "#fff"
                      }}
                   >
-                     Back to List
+                     Liste
                   </Text>
                </TouchableOpacity>
             </View>

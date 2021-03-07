@@ -47,7 +47,7 @@ class TextScreen extends React.Component {
                         color: "#fff"
                      }}
                   >
-                     My Account
+                     Mon compte
                   </Text>
                </TouchableOpacity>
             </View>

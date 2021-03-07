@@ -35,7 +35,7 @@ class SignUpScreen extends React.Component {
                      size={20}
                   />
                   <TextInput
-                     placeholder="Your mail"
+                     placeholder="Votre email"
                      style={styles.textInput}
                      autoCapitalize="none"
                   />
@@ -49,7 +49,7 @@ class SignUpScreen extends React.Component {
                      />
                   </Animatable.View>
                </View>
-               <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
+               <Text style={[styles.text_footer, { marginTop: 35 }]}>Mot de passe</Text>
                <View style={styles.action}>
                   <FontAwesome
                      name="lock"
@@ -57,7 +57,7 @@ class SignUpScreen extends React.Component {
                      size={20}
                   />
                   <TextInput
-                     placeholder="Your password"
+                     placeholder="Votre mot de passe"
                      style={styles.textInput}
                      autoCapitalize="none"
                   />
@@ -67,7 +67,7 @@ class SignUpScreen extends React.Component {
                   size={20}
                />
                </View>
-               <Text style={[styles.text_footer, { marginTop: 35 }]}>Confirm Password</Text>
+               <Text style={[styles.text_footer, { marginTop: 35 }]}>Confirmation mot de passe</Text>
                <View style={styles.action}>
                   <FontAwesome
                      name="lock"
@@ -75,7 +75,7 @@ class SignUpScreen extends React.Component {
                      size={20}
                   />
                   <TextInput
-                     placeholder="Confirm your password"
+                     placeholder="Confirmation mot de passe"
                      style={styles.textInput}
                      autoCapitalize="none"
                   />
@@ -95,7 +95,7 @@ class SignUpScreen extends React.Component {
                         this.props.navigation.navigate("Account");
                      }}
                   >
-                     <Text style={styles.textSign}>Sign Up</Text>
+                     <Text style={styles.textSign}>S'inscrire</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                      style={[styles.signIn, {
@@ -107,7 +107,7 @@ class SignUpScreen extends React.Component {
                         this.props.navigation.navigate("SignIn")
                      }}
                   >
-                     <Text style={[styles.textSign, {color:"#FDB934"}]}>Sign In</Text>
+                     <Text style={[styles.textSign, {color:"#FDB934"}]}>Se connecter</Text>
                   </TouchableOpacity>
                </View>
             </Animatable.View>

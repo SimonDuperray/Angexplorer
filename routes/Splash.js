@@ -39,7 +39,7 @@ export default class Splash extends React.Component {
                         elevation: 9
                      }]}
                   >
-                     <Text style={styles.textSign}>Access data</Text>
+                     <Text style={styles.textSign}>Allez-y</Text>
                      <MaterialIcons
                         name="navigate-next"
                         color="#fff"

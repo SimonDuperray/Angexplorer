@@ -41,7 +41,7 @@ export default class FirstSuccess extends React.Component {
                         color: "#fff"
                      }}
                   >
-                     Back to my Account
+                     Mon compte
                   </Text>
                </TouchableOpacity>
             </View>

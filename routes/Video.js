@@ -17,21 +17,12 @@ class VideoScreen extends React.Component {
                      height: height_logo
                   }}
                />
-               {/* <Text style={styles.brandHeader}>Angexplorer</Text>
-               <Text style={styles.textHeader}>Place du Ralliement</Text>
-               <TouchableOpacity
-                  onPress={() => {
-                     this.props.navigation.navigate("SignIn");
-                  }}
-               >
-                  <Text style={styles.accountRedirectionText}>My Account</Text> 
-               </TouchableOpacity> */}
             </View>
             <Animatable.View 
                   animation="fadeInUpBig"
                style={styles.footer}>
                <Text style={styles.warning}>
-                  The Video component is still not working...
+                  Problème de versions entre Expo et React Video...
                </Text>
             </Animatable.View>
          </View>

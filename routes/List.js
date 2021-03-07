@@ -31,7 +31,7 @@ class ListScreen extends React.Component {
                      this.props.navigation.navigate('Text')
                   }}
                >
-                  <Text style={styles.textColorList}>Text Component</Text>
+                  <Text style={styles.textColorList}>Texte</Text>
                </TouchableOpacity>
                <TouchableOpacity
                   style={styles.button}
@@ -39,7 +39,7 @@ class ListScreen extends React.Component {
                      this.props.navigation.navigate('Video')
                   }}
                >
-                  <Text style={styles.textColorList}>Video Component</Text>
+                  <Text style={styles.textColorList}>Vidéo</Text>
                </TouchableOpacity>
                <TouchableOpacity
                   style={styles.button}
@@ -47,7 +47,7 @@ class ListScreen extends React.Component {
                      this.props.navigation.navigate('Game')
                   }}
                >
-                  <Text style={styles.textColorList}>Game Component</Text>
+                  <Text style={styles.textColorList}>Jeu</Text>
                </TouchableOpacity>
             </Animatable.View>
          </View>

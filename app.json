@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Prototype App AngeXplorer - Les Entrep",
+    "githubUrl": "https://github.com/SimonDuperray/we_AngeXplorer"
   }
 }

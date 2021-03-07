@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import Success from "../components/Success";
 import Reward from "../components/Reward";
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import * as Animatable from "react-native-animatable";
 
 class Account extends React.Component {
@@ -53,7 +52,7 @@ class Account extends React.Component {
                         color: "#fff"
                      }}
                   >
-                     Back to List
+                     Liste
                   </Text>
                </TouchableOpacity>
             </View>
@@ -64,7 +63,7 @@ class Account extends React.Component {
                <ScrollView>
                   <View style={styles.myAccount}>
                      <View style={styles.partContainer}>
-                        <Text style={styles.partTitle}>My account</Text>
+                        <Text style={styles.partTitle}>Mon compte</Text>
                      </View>
                      <View style={[styles.action], {marginLeft: 20}}>
                         <Text style={styles.label}>Email:</Text>
@@ -72,7 +71,7 @@ class Account extends React.Component {
                         style={styles.input}
                            placeholder="simon.duperray@reseau.eseo.fr"
                         />
-                        <Text style={[styles.label, {marginTop: 10}]}>Password:</Text>
+                        <Text style={[styles.label, {marginTop: 10}]}>Mot de passe:</Text>
                         <TextInput
                         style={styles.input}
                            secureTextEntry="true"
@@ -82,7 +81,7 @@ class Account extends React.Component {
                   </View>
                   <View style={styles.mySuccess}>
                      <View style={styles.partContainer}>
-                        <Text style={styles.partTitle}>My success - 3/48</Text>
+                        <Text style={styles.partTitle}>Mes succès - 3/48</Text>
                      </View>
                      <View style={styles.itemContainer}>
                         <TouchableOpacity
@@ -110,7 +109,7 @@ class Account extends React.Component {
                   </View>
                   <View style={styles.myRewards}>
                      <View style={styles.partContainer}>
-                        <Text style={styles.partTitle}>My rewards - 2</Text>
+                        <Text style={styles.partTitle}>Mes récompenses - 2</Text>
                      </View>
                      <View style={styles.itemContainer}>
                         <TouchableOpacity
@@ -118,14 +117,14 @@ class Account extends React.Component {
                               this.props.navigation.navigate("FirstReward")
                            }}
                         >
-                           <Reward reward="Irigo - 10% discount"/>
+                           <Reward reward="Irigo - 10% réduction"/>
                         </TouchableOpacity>
                         <TouchableOpacity
                            onPress={() => {
                               this.props.navigation.navigate("SecondReward")
                            }}
                         >
-                           <Reward reward="Meal offered"/>
+                           <Reward reward="Bistrot des Ducs - Menu offert"/>
                         </TouchableOpacity>
                      </View>
                   </View>

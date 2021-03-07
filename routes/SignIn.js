@@ -35,7 +35,7 @@ class SignInScreen extends React.Component {
                      size={20}
                   />
                   <TextInput
-                     placeholder="Your email"
+                     placeholder="Votre email"
                      style={styles.textInput}
                      autoCapitalize="none"
                   />
@@ -45,7 +45,7 @@ class SignInScreen extends React.Component {
                      size={20}
                   />
                </View>
-               <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
+               <Text style={[styles.text_footer, { marginTop: 35 }]}>Mot de passe</Text>
                <View style={styles.action}>
                   <FontAwesome
                      name="lock"
@@ -53,7 +53,7 @@ class SignInScreen extends React.Component {
                      size={20}
                   />
                   <TextInput
-                     placeholder="Your password"
+                     placeholder="Votre mot de passe"
                      style={styles.textInput}
                      autoCapitalize="none"
                   />
@@ -70,7 +70,7 @@ class SignInScreen extends React.Component {
                         this.props.navigation.navigate("Account")
                      }}
                   >
-                     <Text style={styles.textSign}>Sign In</Text>
+                     <Text style={styles.textSign}>Se connecter</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                      style={[styles.signIn, {
@@ -82,7 +82,7 @@ class SignInScreen extends React.Component {
                         this.props.navigation.navigate("SignUp");
                      }}
                   >
-                     <Text style={[styles.textSign, {color:"#FDB934"}]}>Sign Up</Text>
+                     <Text style={[styles.textSign, {color:"#FDB934"}]}>S'inscrire</Text>
                   </TouchableOpacity>
                </View>
             </Animatable.View>
