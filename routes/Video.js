@@ -7,7 +7,7 @@ class VideoScreen extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               <Animatable.Image
+               {/* <Animatable.Image
                      animation="bounceIn"
                      duraton="1500"
                   source={require("../assets/logocompletnoir.svg")}
@@ -16,7 +16,7 @@ class VideoScreen extends React.Component {
                      width: height_logo,
                      height: height_logo
                   }}
-               />
+               /> */}
             </View>
             <Animatable.View 
                   animation="fadeInUpBig"

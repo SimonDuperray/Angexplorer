@@ -7,13 +7,13 @@ export default class FirstSuccess extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               <Animatable.Image 
+               {/* <Animatable.Image 
                      animation="bounceIn"
                      duraton="1500"
                   source={require("../../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
-               />
+               /> */}
                <TouchableOpacity
                   onPress={() => {
                      this.props.navigation.navigate("Account")
@@ -50,10 +50,10 @@ export default class FirstSuccess extends React.Component {
                style={styles.footer}
             >
                <Text style={styles.successName}>Le temps passe</Text>
-               <Image
+               {/* <Image
                   source={require("../../assets/temps.PNG")}
                   style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }}
-               />
+               /> */}
                <Text style={styles.successDescription}>
                   Vous avez passé 10 heures dans le tramway cette semaine ! J'espère que l'on vous a appris des choses ! Vous venez de débloquer une récompense.
                </Text>

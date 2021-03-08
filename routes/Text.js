@@ -15,7 +15,7 @@ class TextScreen extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               <Text style={styles.brandHeader}>Angexplorer</Text>
+               <Text style={styles.brandHeader}>Angerxplorer</Text>
                <Text style={styles.textHeader}>Place du Ralliement</Text>
                <TouchableOpacity
                   onPress={() => {
@@ -56,7 +56,7 @@ class TextScreen extends React.Component {
                style={styles.footer}
             >
                <ScrollView>     
-                  <Image source={ralliement} style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }} />
+                  {/* <Image source={ralliement} style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }} /> */}
                   <Text style={{ marginBottom: 20 }}>
                      Vous êtes déjà tous passés devant le 8 place du Ralliement, mais saviez-vous que ce fut à cet endroit que les Angevins découvrirent le cinéma?
                   </Text>

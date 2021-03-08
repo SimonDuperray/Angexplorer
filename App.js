@@ -15,6 +15,7 @@ import SecondSuccess from "./user-data/success/SecondSuccess";
 import ThirdSuccess from "./user-data/success/ThirdSuccess";
 import FirstReward from "./user-data/reward/FirstReward";
 import SecondReward from "./user-data/reward/SecondReward";
+import Maps from "./routes/Maps";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,10 @@ class App extends React.Component {
             headerShown: false
           }}
         >
+          <Stack.Screen
+            name="Maps"
+            component={Maps}
+          />
           <Stack.Screen
             name="Splash"
             component={SplashScreen}

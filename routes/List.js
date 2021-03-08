@@ -13,13 +13,13 @@ class ListScreen extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               <Animatable.Image
+               {/* <Animatable.Image
                      animation="bounceIn"
                      duraton="1500"
                   source={require("../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
-               />
+               /> */}
             </View>
             <Animatable.View 
                   animation="fadeInUpBig"
@@ -48,6 +48,14 @@ class ListScreen extends React.Component {
                   }}
                >
                   <Text style={styles.textColorList}>Jeu</Text>
+               </TouchableOpacity>
+               <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => {
+                     this.props.navigation.navigate("Maps")
+                  }}
+               >
+                  <Text style={styles.textColorList}>Maps</Text>
                </TouchableOpacity>
             </Animatable.View>
          </View>
