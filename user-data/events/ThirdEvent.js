@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Dimensions, Image } from "react-native";
 import * as Animatable from "react-native-animatable";
 
-export default class FirstSuccess extends React.Component {
+export default class SecondEvent extends React.Component {
    render() {
       return (
          <View style={styles.container}>
@@ -49,15 +49,14 @@ export default class FirstSuccess extends React.Component {
                   animation='fadeInUpBig'
                style={styles.footer}
             >
-               <Text style={styles.successName}>IRIGO</Text>
+               <Text style={styles.successName}>Crêperie des Angles</Text>
                <Image
-                  source={require("../../assets/irigo.jpg")}
-                  style={{ aspectRatio: 2/3, borderRadius: 5, marginBottom: 30, height: 150 }}
+                  source={require("../../assets/creperie.PNG")}
+                  style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }}
                />
                <Text style={styles.successDescription}>
-                  10% de réduction sur votre abonnement mensuel en cliquant sur lien ci-après ! Profitez-en !
+                  3 crêpes achetées = 1 crêpe offerte
                </Text>
-               <Text style={styles.linking}>débloquez votre récompense dès maintenant</Text>
             </Animatable.View>
          </View>
       );
@@ -99,13 +98,5 @@ const styles = StyleSheet.create({
    },
    successDescription: {
       textAlign: 'center'
-   },
-   linking: {
-      textAlign: 'center',
-      textDecorationStyle: 'solid',
-      textDecorationLine: "underline",
-      textDecorationColor: "#338AFF",
-      marginTop: 10,
-      color: '#338AFF'
    }
 });

@@ -7,13 +7,13 @@ export default class FirstSuccess extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               {/* <Animatable.Image 
+               <Animatable.Image 
                      animation="bounceIn"
                      duraton="1500"
                   source={require("../../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
-               /> */}
+               />
                <TouchableOpacity
                   onPress={() => {
                      this.props.navigation.navigate("Account")
@@ -50,10 +50,10 @@ export default class FirstSuccess extends React.Component {
                style={styles.footer}
             >
                <Text style={styles.successName}>Proche de la fin</Text>
-               {/* <Image
+               <Image
                   source={require("../../assets/prochefin.PNG")}
                   style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }}
-               /> */}
+               />
                <Text style={styles.successDescription}>
                   Il ne vous manque que 5 arrêts à découvrir. Trouvez-les pour gagner 10 points et une récompense de votre choix !
                </Text>

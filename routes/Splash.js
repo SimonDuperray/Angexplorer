@@ -9,13 +9,13 @@ export default class Splash extends React.Component {
       return (
          <View style={pattern.container}>
             <View style={pattern.header}>
-               {/* <Animatable.Image 
+               <Animatable.Image 
                      animation="bounceIn"
                      duraton="1500"
                   source={require("../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
-               /> */}
+               />
             </View>
             <Animatable.View 
                   animation="fadeInUpBig" 

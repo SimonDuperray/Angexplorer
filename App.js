@@ -16,6 +16,9 @@ import ThirdSuccess from "./user-data/success/ThirdSuccess";
 import FirstReward from "./user-data/reward/FirstReward";
 import SecondReward from "./user-data/reward/SecondReward";
 import Maps from "./routes/Maps";
+import FirstEvent from "./user-data/events/FirstEvent";
+import SecondEvent from "./user-data/events/SecondEvent";
+import ThirdEvent from "./user-data/events/ThirdEvent";
 
 const Stack = createStackNavigator();
 
@@ -29,16 +32,12 @@ class App extends React.Component {
           }}
         >
           <Stack.Screen
-            name="Maps"
-            component={Maps}
+            name='Account'
+            component={AccountScreen}
           />
           <Stack.Screen
             name="Splash"
             component={SplashScreen}
-          />
-          <Stack.Screen
-            name='Account'
-            component={AccountScreen}
           />
           <Stack.Screen
             name="Text"
@@ -65,6 +64,10 @@ class App extends React.Component {
             component={GameScreen}
           />
           <Stack.Screen
+            name="Maps"
+            component={Maps}
+          />
+          <Stack.Screen
             name="FirstSuccess"
             component={FirstSuccess}
           />
@@ -83,6 +86,18 @@ class App extends React.Component {
           <Stack.Screen
             name="SecondReward"
             component={SecondReward}
+          />
+          <Stack.Screen
+            name="FirstEvent"
+            component={FirstEvent}
+          />
+          <Stack.Screen
+            name="SecondEvent"
+            component={SecondEvent}
+          />
+          <Stack.Screen
+            name="ThirdEvent"
+            component={ThirdEvent}
           />
         </Stack.Navigator>
       </NavigationContainer>

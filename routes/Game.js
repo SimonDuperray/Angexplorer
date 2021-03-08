@@ -85,13 +85,13 @@ export default class Game extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               {/* <Animatable.Image 
+               <Animatable.Image 
                      animation="bounceIn"
                      duraton="1500"
                   source={require("../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
-               /> */}
+               />
                <TouchableOpacity
                   onPress={() => {
                      this.props.navigation.navigate("List")

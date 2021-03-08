@@ -7,13 +7,13 @@ export default class FirstSuccess extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               {/* <Animatable.Image 
+               <Animatable.Image 
                      animation="bounceIn"
                      duraton="1500"
                   source={require("../../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
-               /> */}
+               />
                <TouchableOpacity
                   onPress={() => {
                      this.props.navigation.navigate("Account")
@@ -50,10 +50,10 @@ export default class FirstSuccess extends React.Component {
                style={styles.footer}
             >
                <Text style={styles.successName}>Bistrot des Ducs</Text>
-               {/* <Image
+               <Image
                   source={require("../../assets/resto.jpg")}
                   style={{ aspectRatio: 2/3, borderRadius: 5, marginBottom: 30, height: 150 }}
-               /> */}
+               />
                <Text style={styles.successDescription}>
                   1 plat traditionnel français offert pour un menu classique acheté !
                </Text>
