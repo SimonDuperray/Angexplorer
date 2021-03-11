@@ -4,9 +4,11 @@ import {
    View, 
    Text, 
    Dimensions,
-   TouchableOpacity
+   TouchableOpacity,
+   Image
 } from "react-native";
 // import MapView, { Marker } from "react-native-maps";
+import * as Animatable from "react-native-animatable";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const LATITUDE = 47.47044;
@@ -119,7 +121,7 @@ export default class Maps extends React.Component {
    }
    
    render() {
-      const { region } = this.state;
+      // const { region } = this.state;
       return (
          <View style={styles.container}>
             <View style={styles.header}>
@@ -130,8 +132,8 @@ export default class Maps extends React.Component {
                   style={styles.logo}
                   resizeMode="stretch"
                />
-               <Text style={styles.brandHeader}>Angerxplorer</Text>
-               <TouchableOpacity
+               {/* <Text style={styles.brandHeader}>Angerxplorer</Text> */}
+               {/* <TouchableOpacity
                   onPress={() => {
                      this.props.navigation.navigate("List")
                   }}
@@ -160,7 +162,7 @@ export default class Maps extends React.Component {
                   >
                      Liste
                   </Text>
-               </TouchableOpacity>
+               </TouchableOpacity> */}
             </View>
             <View style={styles.footer}>
                {/* <MapView
@@ -171,6 +173,16 @@ export default class Maps extends React.Component {
                >
                   { this.getCompletedMarkers() }
                </MapView> */}
+               <TouchableOpacity
+                  onPress={() => {
+                     this.props.navigation.navigate("FirstEvent")
+                  }}
+               >
+                  <Image
+                     style={styles.map}
+                     source={require("../assets/map.PNG")}
+                  />
+               </TouchableOpacity>
             </View>
          </View>
       );
@@ -180,21 +192,18 @@ export default class Maps extends React.Component {
 const { height } = Dimensions.get("screen");
 const height_logo = height * 0.37;
 
-const { map_height } = Dimensions.get('screen');
-const height_map = map_height * 37;
-
 const styles = StyleSheet.create({
    container: {
       flex: 1,
       backgroundColor: "#FDB934"
    },
    header: {
-      flex: 1, 
+      flex: 0.5, 
       justifyContent: "center",
       alignItems: 'center'
    },
    footer: {
-      flex: 3,
+      flex: 4,
       backgroundColor: '#fff',
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
@@ -204,8 +213,12 @@ const styles = StyleSheet.create({
       justifyContent: 'center'
    },
    logo: {
-      height: height_logo+200,
-      width: height_logo+50,
+      height: height_logo,
+      width: height_logo,
+   },
+   map: {
+      height: height_logo+180,
+      width: height_logo+30,
    },
    callout: {
       backgroundColor: "#fff",

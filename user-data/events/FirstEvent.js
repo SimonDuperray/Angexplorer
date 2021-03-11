@@ -54,7 +54,7 @@ export default class FirstEvent extends React.Component {
                   source={require("../../assets/mail.PNG")}
                   style={{ aspectRatio: 2/3, height: 150, borderRadius: 5, marginBottom: 30 }}
                />
-               <Text style={styles.successDescription}>
+               <Text style={[styles.successDescription, {fontSize: 16}]}>
                   Feux d'artifice le 23 avril 2021 à 21h !
                </Text>
             </Animatable.View>

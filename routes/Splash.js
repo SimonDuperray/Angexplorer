@@ -11,23 +11,24 @@ export default class Splash extends React.Component {
             <View style={pattern.header}>
                <Animatable.Image 
                      animation="bounceIn"
-                     duraton="1500"
+                     duraton="5000"
                   source={require("../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
                />
             </View>
             <Animatable.View 
-                  animation="fadeInUpBig" 
+                  animation="fadeInUpBig"
+                  duraton="5000"
                style={pattern.footer}
             >
                <Text style={styles.title}>Un autre regard</Text>
                <Text style={styles.title_underscored}>sur votre trajet</Text>
-               <Text style={styles.text}>Place du Ralliement</Text>
+               <Text style={styles.text}>Hôtel de Ville</Text>
                <View style={styles.button}>
                   <TouchableOpacity 
                      onPress={() => {
-                        this.props.navigation.navigate("List")
+                        this.props.navigation.navigate("Text")
                      }}
                      style={[styles.signIn, {
                         shadowColor: "#000",
@@ -94,7 +95,8 @@ const styles = StyleSheet.create({
    },
    text: {
       color: 'grey',
-      marginTop: 15
+      marginTop: 15,
+      fontSize: 17
    },
    button: {
       alignItems: "flex-end",
