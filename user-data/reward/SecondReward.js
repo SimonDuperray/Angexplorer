@@ -51,7 +51,7 @@ export default class FirstSuccess extends React.Component {
             >
                <Text style={styles.successName}>Bistrot des Ducs</Text>
                <Image
-                  source={require("../../assets/resto.jpg")}
+                  source={require("../../assets/bistrotducs.PNG")}
                   style={{ aspectRatio: 2/3, borderRadius: 5, marginBottom: 30, height: 150 }}
                />
                <Text style={styles.successDescription}>

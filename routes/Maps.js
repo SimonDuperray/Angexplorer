@@ -39,7 +39,7 @@ export default class Maps extends React.Component {
             {
                title: "Librairie Contact",
                coordinate: {
-                  latitude: LATITUDE+SPACE/6,
+                  latitude: LATITUDE+SPACE/6,   
                   longitude: LONGITUDE-SPACE/6
                },
                color: "green",
@@ -107,7 +107,7 @@ export default class Maps extends React.Component {
                            <MaterialIcons
                               name="location-pin"
                               color="#FF6666"
-                              size={20}
+                              size={25}
                            />
                         )
                      }
@@ -123,14 +123,14 @@ export default class Maps extends React.Component {
       return (
          <View style={styles.container}>
             <View style={styles.header}>
-               {/* <Animatable.Image
+               <Animatable.Image
                      animation="bounceIn"
                      duraton='1500'
                   source={require("../assets/logocompletnoir.svg")}
                   style={styles.logo}
                   resizeMode="stretch"
-               /> */}
-               <Text>Angerxplorer</Text>
+               />
+               <Text style={styles.brandHeader}>Angerxplorer</Text>
                <TouchableOpacity
                   onPress={() => {
                      this.props.navigation.navigate("List")
@@ -234,5 +234,11 @@ const styles = StyleSheet.create({
       fontSize: 12,
       lineHeight: 16,
       flex: 1
-   }
+   },
+   brandHeader: {
+      color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 30,
+      marginBottom: 20
+   },
 });

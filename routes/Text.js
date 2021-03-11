@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import * as Animatable from "react-native-animatable";
 import ralliement from "../assets/ralliement.jpg";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 class TextScreen extends React.Component {
    render() {
@@ -21,15 +22,31 @@ class TextScreen extends React.Component {
                   onPress={() => {
                      this.props.navigation.navigate("SignIn")
                   }}
+                  style={styles.touchableOpacityStyleHeader}
+               >
+                  <Text
+                     style={{
+                        fontWeight: 'bold',
+                        color: "#fff"
+                     }}
+                  >
+                     Mon compte
+                  </Text>
+               </TouchableOpacity>
+               <TouchableOpacity
+                  onPress={() => {
+                     this.props.navigation.navigate('Maps')
+                  }}
                   style={{
                      borderWidth: 1,
                      borderColor: "orange",
                      backgroundColor: 'orange',
-                     paddingVertical: 5,
-                     paddingHorizontal: 10,
-                     borderRadius: 10,
-                     width: 130,
+                     padding: 5,
+                     borderRadius: 100,
+                     width: 30,
+                     height: 30,
                      textAlign: "center",
+                     justifyContent: 'center',
                      marginTop: 15,
                      shadowColor: "#000",
                      shadowOffset: {
@@ -41,14 +58,11 @@ class TextScreen extends React.Component {
                      elevation: 9,
                   }}
                >
-                  <Text
-                     style={{
-                        fontWeight: 'bold',
-                        color: "#fff"
-                     }}
-                  >
-                     Mon compte
-                  </Text>
+                  <MaterialIcons
+                     name="location-pin"
+                     color="#fff"
+                     size={15}
+                  />
                </TouchableOpacity>
             </View>
             <Animatable.View 
@@ -109,6 +123,25 @@ const styles = StyleSheet.create({
      textDecorationLine: 'underline',
      fontWeight: 'bold',
    },
+   touchableOpacityStyleHeader: {
+      borderWidth: 1,
+      borderColor: "orange",
+      backgroundColor: 'orange',
+      paddingVertical: 5,
+      paddingHorizontal: 10,
+      borderRadius: 10,
+      width: 130,
+      textAlign: "center",
+      marginTop: 15,
+      shadowColor: "#000",
+      shadowOffset: {
+         width: 0,
+         height: 4,
+      },
+      shadowOpacity: 0.32,
+      shadowRadius: 5.46,
+      elevation: 9,
+   }
 });
  
 

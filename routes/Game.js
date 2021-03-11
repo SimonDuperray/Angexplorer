@@ -8,6 +8,8 @@ import {
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import pendu from "../assets/img_pendu.PNG";
 
 export default class Game extends React.Component {
    constructor(props){
@@ -122,6 +124,37 @@ export default class Game extends React.Component {
                      Liste
                   </Text>
                </TouchableOpacity>
+               <TouchableOpacity
+                  onPress={() => {
+                     this.props.navigation.navigate('Maps')
+                  }}
+                  style={{
+                     borderWidth: 1,
+                     borderColor: "orange",
+                     backgroundColor: 'orange',
+                     padding: 5,
+                     borderRadius: 100,
+                     width: 30,
+                     height: 30,
+                     textAlign: "center",
+                     justifyContent: 'center',
+                     marginTop: 15,
+                     shadowColor: "#000",
+                     shadowOffset: {
+                        width: 0,
+                        height: 4,
+                     },
+                     shadowOpacity: 0.32,
+                     shadowRadius: 5.46,
+                     elevation: 9,
+                  }}
+               >
+                  <MaterialIcons
+                     name="location-pin"
+                     color="#fff"
+                     size={15}
+                  />
+               </TouchableOpacity>
             </View>
             <Animatable.View 
                   animation="fadeInUpBig"
@@ -129,6 +162,11 @@ export default class Game extends React.Component {
             >
                <Text style={styles.title}>Jeu du pendu</Text>
                <View style={styles.toFindContainer}>
+                  <Text
+                     style={styles.enigme}
+                  >
+                     Saviez-vous qu'une statue représentant le Roi René, Duc d'Anjou, a été exposée pendant deux semaines sur la place du Ralliement ?
+                  </Text>
                   <View style={styles.health}>
                      { heartsList }
                   </View>
@@ -253,5 +291,9 @@ const styles = StyleSheet.create({
    lineOfLetters: {
       flexDirection: 'row',
       marginVertical: 8,
-   }
+   },
+   enigme: {
+      textAlign: "center",
+      marginBottom: 10,
+   },
 })

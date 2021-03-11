@@ -21,7 +21,8 @@ export default class Splash extends React.Component {
                   animation="fadeInUpBig" 
                style={pattern.footer}
             >
-               <Text style={styles.title}>Un autre regard sur votre trajet</Text>
+               <Text style={styles.title}>Un autre regard</Text>
+               <Text style={styles.title_underscored}>sur votre trajet</Text>
                <Text style={styles.text}>Place du Ralliement</Text>
                <View style={styles.button}>
                   <TouchableOpacity 
@@ -79,6 +80,11 @@ const styles = StyleSheet.create({
       height: height_logo
    },
    title: {
+      color: "#05375a",
+      fontSize: 30,
+      fontWeight: 'bold',
+   },
+   title_underscored: {
       color: "#05375a",
       fontSize: 30,
       fontWeight: 'bold',

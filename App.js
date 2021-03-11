@@ -32,16 +32,17 @@ class App extends React.Component {
           }}
         >
           <Stack.Screen
-            name='Account'
-            component={AccountScreen}
-          />
-          <Stack.Screen
             name="Splash"
             component={SplashScreen}
           />
           <Stack.Screen
-            name="Text"
-            component={TextScreen}
+            name="Game"
+            component={GameScreen}
+          />
+          
+          <Stack.Screen
+            name='Account'
+            component={AccountScreen}
           />
           <Stack.Screen
             name="SignIn"
@@ -56,12 +57,12 @@ class App extends React.Component {
             component={ListScreen}
           />
           <Stack.Screen
-            name="Video"
-            component={VideoScreen}
+            name="Text"
+            component={TextScreen}
           />
           <Stack.Screen
-            name="Game"
-            component={GameScreen}
+            name="Video"
+            component={VideoScreen}
           />
           <Stack.Screen
             name="Maps"

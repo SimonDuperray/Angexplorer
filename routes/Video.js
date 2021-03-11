@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import * as Animatable from "react-native-animatable";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 class VideoScreen extends React.Component {
    render() {
@@ -17,6 +18,37 @@ class VideoScreen extends React.Component {
                      height: height_logo
                   }}
                />
+               <TouchableOpacity
+                  onPress={() => {
+                     this.props.navigation.navigate('Maps')
+                  }}
+                  style={{
+                     borderWidth: 1,
+                     borderColor: "orange",
+                     backgroundColor: 'orange',
+                     padding: 5,
+                     borderRadius: 100,
+                     width: 30,
+                     height: 30,
+                     textAlign: "center",
+                     justifyContent: 'center',
+                     marginTop: 15,
+                     shadowColor: "#000",
+                     shadowOffset: {
+                        width: 0,
+                        height: 4,
+                     },
+                     shadowOpacity: 0.32,
+                     shadowRadius: 5.46,
+                     elevation: 9,
+                  }}
+               >
+                  <MaterialIcons
+                     name="location-pin"
+                     color="#fff"
+                     size={15}
+                  />
+               </TouchableOpacity>
             </View>
             <Animatable.View 
                   animation="fadeInUpBig"
